@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "RezzList",
+    "slug": "RezzList",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
