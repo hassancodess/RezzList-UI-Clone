@@ -1,50 +1,42 @@
-import React from 'react'
-import { View } from 'react-native'
-import {
-    DrawerContentScrollView,
-    DrawerItemList,
-} from '@react-navigation/drawer';
-import Logo from '../shared/Logo';
-import { LinearGradient } from 'expo-linear-gradient';
-import { ScaledSheet } from 'react-native-size-matters';
+import React from "react";
+import { View } from "react-native";
+import { DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer";
+import Logo from "../shared/Logo";
+import { LinearGradient } from "expo-linear-gradient";
+import { ScaledSheet } from "react-native-size-matters";
 
 const CustomDrawer = (props) => {
-    return (
-        <View style={{ flex: 1 }}>
-            <LinearGradient
-                style={styles.drawerContainer}
-                colors={['#EEA657', '#EA674B']}
-                start={{ x: 0, y: 1 }}
-                end={{ x: 1, y: 1 }}
-                locations={[0, 1]}>
-                <DrawerContentScrollView
-                    {...props}
-                    contentContainerStyle={styles.logoContainer}
-                >
-                    <Logo />
-                </DrawerContentScrollView>
-            </LinearGradient>
-            <DrawerContentScrollView>
-                <DrawerItemList {...props} />
-            </DrawerContentScrollView>
+	return (
+		<View style={{ flex: 1 }}>
+			<LinearGradient
+				style={styles.drawerContainer}
+				colors={["#EEA657", "#EA674B"]}
+				start={{ x: 0, y: 1 }}
+				end={{ x: 1, y: 1 }}
+				locations={[0, 1]}>
+				<DrawerContentScrollView {...props} contentContainerStyle={styles.logoContainer}>
+					<Logo />
+				</DrawerContentScrollView>
+			</LinearGradient>
+			<DrawerContentScrollView>
+				<DrawerItemList {...props} />
+			</DrawerContentScrollView>
+		</View>
+	);
+};
 
-        </View>
-    )
-}
-
-export default CustomDrawer
+export default CustomDrawer;
 
 const styles = ScaledSheet.create({
-    drawerContainer: {
-        height: '250@vs',
-    },
-    logoContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: "90%"
-    }
-})
-
+	drawerContainer: {
+		height: "250@vs",
+	},
+	logoContainer: {
+		alignItems: "center",
+		justifyContent: "center",
+		height: "90%",
+	},
+});
 
 // import { ScaledSheet } from 'react-native-size-matters';
 // import { StyleSheet, Text, View } from 'react-native'
@@ -60,7 +52,6 @@ const styles = ScaledSheet.create({
 // const CustomDrawer = (props) => {
 
 //     const [active, setActive] = React.useState('');
-
 
 //     return (
 //         <>
