@@ -25,7 +25,6 @@ const styles = ScaledSheet.create({
 	datesContainer: {
 		flexDirection: "row",
 		alignItems: "flex-start",
-		marginVertical: "10@vs",
 		gap: 10,
 	},
 });

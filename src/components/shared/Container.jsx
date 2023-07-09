@@ -9,6 +9,8 @@ export default Container;
 
 const styles = StyleSheet.create({
 	container: {
-		paddingHorizontal: 12,
+		flex: 1,
+		paddingHorizontal: 18,
+		paddingBottom: 5,
 	},
 });

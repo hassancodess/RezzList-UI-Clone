@@ -9,6 +9,9 @@ import DatesContainer from "../../components/home/DatesContainer";
 import { DATES } from "../../data/dates";
 import OutlineButton from "../../components/shared/OutlineButton";
 import Container from "../../components/shared/Container";
+import ReservationsList from "../../components/home/ReservationsList";
+import { RESERVATIONS } from "../../data/reservations";
+import { ScrollView } from "react-native-gesture-handler";
 
 const Home = () => {
 	const theme = useTheme();
@@ -61,16 +64,22 @@ const Home = () => {
 					<Text style={styles.text}>Available Resrvations</Text>
 				</View>
 			</LinearGradient>
-			{/* Dates */}
 			<Container>
-				<View>
-					<DatesContainer dates={DATES} />
-				</View>
-				{/* Button */}
-				<View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-					<OutlineButton>Create Reservation </OutlineButton>
-				</View>
-				{/* Cards */}
+				<ScrollView style={{ height: "100%" }}>
+					{/* Dates */}
+					<View style={styles.datesContainer}>
+						<DatesContainer dates={DATES} />
+					</View>
+					{/* Button */}
+					<View style={styles.buttonContainer}>
+						<OutlineButton>Create Reservation </OutlineButton>
+					</View>
+					{/* Cards */}
+					<View style={styles.reservationsContainer}>
+						<ReservationsList data={RESERVATIONS} />
+					</View>
+					<View style={styles.seperator}></View>
+				</ScrollView>
 			</Container>
 		</View>
 	);
@@ -127,5 +136,20 @@ const createStyles = (theme) =>
 		text: {
 			fontSize: 16,
 			color: theme.colors.surface,
+		},
+		datesContainer: {
+			marginVertical: "10@vs",
+		},
+		buttonContainer: {
+			flexDirection: "row",
+			justifyContent: "flex-end",
+			marginBottom: "20@vs",
+			// marginBottom:
+		},
+		reservationsContainer: {
+			flex: 1,
+		},
+		seperator: {
+			marginBottom: 50,
 		},
 	});

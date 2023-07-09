@@ -3,11 +3,16 @@ import { Text, useTheme } from "react-native-paper";
 import React from "react";
 import { Button } from "react-native-paper";
 
-const OutlineButton = ({ children }) => {
+const OutlineButton = ({ children, onPress }) => {
 	const theme = useTheme();
 	const styles = createStyles(theme);
 	return (
-		<Button mode="outlined" textColor={theme.colors.R_accent} style={styles.outlineButton}>
+		<Button
+			mode="outlined"
+			rippleColor={theme.colors.background}
+			textColor={theme.colors.R_accent}
+			style={styles.outlineButton}
+			onPress={onPress}>
 			{children}
 		</Button>
 	);
