@@ -65,14 +65,14 @@ const Home = () => {
 				</View>
 			</LinearGradient>
 			<Container>
-				<ScrollView style={{ height: "100%" }}>
+				<ScrollView style={{ height: "100%" }} nestedScrollEnabled={true}>
 					{/* Dates */}
 					<View style={styles.datesContainer}>
 						<DatesContainer dates={DATES} />
 					</View>
 					{/* Button */}
 					<View style={styles.buttonContainer}>
-						<OutlineButton>Create Reservation </OutlineButton>
+						<OutlineButton>Create Reservation</OutlineButton>
 					</View>
 					{/* Cards */}
 					<View style={styles.reservationsContainer}>
@@ -95,7 +95,7 @@ const createStyles = (theme) =>
 		homeContainer: {
 			height: "120@vs",
 			paddingHorizontal: "20@vs",
-			justifyContent: "space-around",
+			justifyContent: "space-evenly",
 		},
 		flexContainer: {
 			flexDirection: "row",

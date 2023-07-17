@@ -60,7 +60,7 @@ export default function MyAppBar({ navigation, route, options, back }) {
 
 const styles = ScaledSheet.create({
 	appBar: {
-		height: "120@vs",
+		height: "90@vs",
 	},
 
 	container: {

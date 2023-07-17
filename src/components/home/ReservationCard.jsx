@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React, { useMemo } from "react";
 import Carousel from "pinar";
 import { Image } from "expo-image";
@@ -16,15 +16,19 @@ const ReservationCard = ({ reservation }) => {
 	return (
 		<View>
 			<View style={styles.carouselContainer}>
-				<Carousel showsControls={false}>
+				<Carousel
+					showsControls={false}
+
+					// dotsContainerStyle={{ backgroundColor: "green" }}
+					// activeDotStyle={{ backgroundColor: "red" }}
+				>
 					<Image
 						style={{ height: "100%", width: "100%", backgroundColor: "red" }}
 						source={reservation.images[0]}
 						placeholder={blurhash}
 						contentFit="cover"
-						transition={1000}>
-						{/* <View style={styles.overlay} /> */}
-					</Image>
+						transition={1000}
+					/>
 
 					<Image
 						style={{ height: "100%", width: "100%", backgroundColor: "red" }}
@@ -40,9 +44,6 @@ const ReservationCard = ({ reservation }) => {
 						contentFit="cover"
 						transition={1000}
 					/>
-					{/* <View style={styles.slide3}> */}
-					{/* <Text style={styles.text}>3</Text> */}
-					{/* </View> */}
 				</Carousel>
 			</View>
 			{/* <Image /> */}
@@ -54,10 +55,10 @@ const ReservationCard = ({ reservation }) => {
 			</View>
 			<View style={styles.locationContainer}>
 				<View style={styles.locationIcon}>
-					<Ionicons name="location-outline" size={22} color={theme.colors.surface} />
+					<Ionicons name="location-outline" size={18} color={theme.colors.surface} />
 					{/* <Avatar.Image size={28} source={reservation.} /> */}
 				</View>
-				<Text style={styles.locationText}>{reservation.avatarLabel}</Text>
+				<Text style={styles.locationText}>{reservation.location}</Text>
 			</View>
 		</View>
 	);
@@ -93,17 +94,23 @@ const createStyles = (theme) =>
 			color: theme.colors.surface,
 		},
 		locationContainer: {
+			// backgroundColor: "red",
 			position: "absolute",
-			left: 50,
-			bottom: 50,
+			// left: 0,
+			bottom: 5,
+			// right: 0,
+			// top: 0,
 			flexDirection: "row",
+			// ÷justifyContent: "cen",
+			// width: "100%",
+			// alignItems: "flex-end",
+			alignSelf: "center",
 			// justifyContent: "center",
-			alignItems: "center",
 			gap: 5,
 		},
 		locationButton: {},
 		locationText: {
-			fontSize: theme.sizes.lg,
+			fontSize: theme.sizes.md,
 			color: theme.colors.surface,
 		},
 		overlay: {
